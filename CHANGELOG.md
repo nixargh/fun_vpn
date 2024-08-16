@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [2.0.1] - 2024-08-17
+### Fixed
+- `nmcli.go` remove connections with state **activating** from list of active connections. It was iterrapting **roly-poly-vpn** during connection to some new Wi-Fi point because connection was waiting for a password.
+
 ## [2.0.0] - 2024-07-31
 The format of settings at Keyring changed. So please remove old Keyring keys containg `roly-poly-vpn` at their names. After start you will be asked for new settings.
 To remove old Keyrings records I prefere to use `seahorse` utillity.

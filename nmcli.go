@@ -10,18 +10,23 @@ import (
 )
 
 func nmcliGetActiveConnections(physical bool) []string {
-	output := basher("nmcli -f NAME,TYPE -t connection show --active", "")
+	output := basher("nmcli -f NAME,TYPE,STATE -t connection show --active", "")
 	var connections, filteredConnections []string
 
 	if len(output) > 0 {
 		connections = strings.Split(output, "\n")
 	}
-	clog.WithFields(log.Fields{"raw_connections": connections}).Debug("All active connections found.")
+	clog.WithFields(log.Fields{"raw_connections": connections}).Debug("All actived/activating connections found.")
 
 	for i := 0; i < len(connections)-1; i++ {
 		splitCon := strings.Split(connections[i], ":")
 		name := splitCon[0]
 		cType := splitCon[1]
+		state := splitCon[2]
+
+		if state != "activated" {
+			continue
+		}
 
 		isPhysical := false
 		if strings.HasSuffix(cType, "ethernet") || strings.HasSuffix(cType, "wireless") {

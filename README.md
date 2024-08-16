@@ -11,7 +11,7 @@ Prepared to be run as a *per-user service* but one may also try to run it system
 
 ## Installation
 - Import your OpenVPN configuration to NetworkManager configuration.
-- Download from binary from [release page](https://github.com/nixargh/roly-poly-vpn/releases).
+- Download binary from [release page](https://github.com/nixargh/roly-poly-vpn/releases).
 - Set execution bit for binary: ```chmod +x ./roly-poly-vpn```
 - Move somewhere to your **PATH**. At Ubuntu I prefer `~/.local/bin/` directory: ```mv ./roly-poly-vpn ~/.local/bin/```.
 - Run it and answer questions about NetworkManager VPN config name, your LDAP password and OTP secret.

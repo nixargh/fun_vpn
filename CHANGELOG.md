@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [2.0.2] - 2024-08-17
 ### Fixed
-- `nmcli.go` remove connections with state **activating** from list of active connections. It was iterrapting **roly-poly-vpn** during connection to some new Wi-Fi point because connection was waiting for a password.
+- `nmcli.go` remove connections with state **activating** from list of active connections. It was interrapting **roly-poly-vpn** during connection to some new Wi-Fi point because connection was waiting for a password.
 
 ## [2.0.0] - 2024-07-31
 The format of settings at Keyring changed. So please remove old Keyring keys containg `roly-poly-vpn` at their names. After start you will be asked for new settings.

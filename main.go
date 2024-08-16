@@ -18,7 +18,7 @@ import (
 	//	"github.com/pkg/profile"
 )
 
-var version string = "2.0.0"
+var version string = "2.0.2"
 
 var clog *log.Entry
 
